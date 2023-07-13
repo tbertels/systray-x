@@ -2,19 +2,25 @@ SYSTEM =
 ifeq (Cygwin,$(shell uname -o))
  SYSTEM = Windows
 else
-ifeq (GNU/Linux,$(shell uname -o))
- SYSTEM = Linux
+ ifeq (GNU/Linux,$(shell uname -o))
+  SYSTEM = Linux
  
- QMAKE = qmake-qt5
- ifeq (, $(shell which qmake-qt5 2>/dev/null))
-  ifeq (, $(shell which qmake 2>/dev/null))
-     $(error "No qmake in $(PATH)")
+  ifeq (, $(shell which qmake6 2>/dev/null))
+   ifeq (, $(shell which qmake-qt5 2>/dev/null))
+    ifeq (, $(shell which qmake 2>/dev/null))
+       $(error "No qmake in $(PATH)")
+    else
+     QMAKE = qmake
+    endif
+   else
+    QMAKE = qmake-qt5
+   endif
+  else
+   QMAKE = qmake6
   endif
-  QMAKE = qmake
+ else
+  $(error "Unknown system")
  endif
-else
- $(error "Unknown system")
-endif
 endif
 
 #OPTIONS = "DEFINES += NO_KDE_INTEGRATION"
