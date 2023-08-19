@@ -21,6 +21,9 @@ unix:!macx: {
     contains(DEFINES,KDE_INTEGRATION) {
 #        QT += dbus KNotifications
         QT += dbus
+
+        INCLUDEPATH += /usr/include/KF5/KNotifications
+        LIBS += -lKF5Notifications
     }
 }
 
