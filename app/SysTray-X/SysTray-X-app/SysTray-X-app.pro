@@ -6,7 +6,7 @@ include( ../SysTray-X.pri )
 #
 #   Defines
 #
-#DEFINES += NO_KDE_INTEGRATION
+DEFINES += NO_KDE_INTEGRATION
 
 
 !contains(DEFINES,NO_KDE_INTEGRATION) {
