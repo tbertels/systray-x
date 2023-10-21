@@ -203,19 +203,26 @@ SysTrayX::SysTrayX( QObject *parent ) : QObject( parent )
      */
     getPreferences();
 
-
+/*
     slotLoadLanguage( "en-US" );
     //slotLoadLanguage( "it" );
     //slotLoadLanguage( "nl" );
     //slotLoadLanguage( "pt-BR" );
     //slotLoadLanguage( "ru" );
-    slotSelectIconObject( true );
+    slotSelectIconObject( false );
+
+    if( m_tray_icon != nullptr )
+    {
+        m_tray_icon->setIconType( Preferences::IconType::PREF_TB_ICON);
+        m_tray_icon->setIconType( Preferences::IconType::PREF_BLANK_ICON);
+    }
 
     slotMailCount( 10, 1 );
-
+*/
 //    m_preferences->setStartApp( "/home/maxime/test.sh" );
 //    m_preferences->setStartAppArgs( "/home/maxime/startup.txt StartupString" );
 //    slotStartApp();
+
 }
 
 
