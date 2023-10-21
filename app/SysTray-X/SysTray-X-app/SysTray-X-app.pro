@@ -6,7 +6,7 @@ include( ../SysTray-X.pri )
 #
 #   Defines
 #
-#DEFINES += NO_KDE_INTEGRATION
+DEFINES += NO_KDE_INTEGRATION
 
 
 !contains(DEFINES,NO_KDE_INTEGRATION) {
@@ -19,11 +19,7 @@ include( ../SysTray-X.pri )
 QT += core gui
 unix:!macx: {
     contains(DEFINES,KDE_INTEGRATION) {
-#        QT += dbus KNotifications
-        QT += dbus
-
-        INCLUDEPATH += /usr/include/KF5/KNotifications
-        LIBS += -lKF5Notifications
+        QT += dbus KNotifications
     }
 }
 
