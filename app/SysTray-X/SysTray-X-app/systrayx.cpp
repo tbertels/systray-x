@@ -740,9 +740,11 @@ void    SysTrayX::slotLoadLanguage( QString locale )
         }
 
         QString locale_path = "SysTray-X."+ locale;
-        m_translator.load( locale_path, ":/languages/" );
-//        bool status = m_translator.load( locale_path, ":/languages/" );
-//        emit signalConsole( QString( "Language loaded %1").arg(status));
+        if( !m_translator.load( locale_path, ":/languages/" ) )
+        {
+            emit signalConsole( QString( "Failed to load language %1").arg( locale ) );
+        }
+
         qApp->installTranslator( &m_translator );
     }
 }
