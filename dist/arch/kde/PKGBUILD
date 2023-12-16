@@ -13,7 +13,7 @@ depends=(
   'qt5-x11extras'
   'knotifications5'
   'thunderbird>=91'
-  'thunderbird<121'
+  'thunderbird<122'
 )
 makedepends=(
   'git'

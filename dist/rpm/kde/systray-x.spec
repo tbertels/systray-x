@@ -36,13 +36,13 @@ BuildRequires:  qt5-qtx11extras-devel
 BuildRequires:  kf5-knotifications-devel
 Requires:       kf5-knotifications
 Requires:       thunderbird >= 91
-Requires:       thunderbird < 121
+Requires:       thunderbird < 122
 %else
 BuildRequires:  libqt5-qtx11extras-devel
 BuildRequires:  knotifications-devel
 Requires:       libKF5Notifications5
 Requires:       MozillaThunderbird >= 91
-Requires:       MozillaThunderbird < 121
+Requires:       MozillaThunderbird < 122
 %endif
 
 %description
