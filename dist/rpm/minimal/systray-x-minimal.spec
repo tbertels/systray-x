@@ -34,11 +34,11 @@ BuildRequires:  pkgconfig(x11)
 %if 0%{?fedora_version} || 0%{?centos_version}
 BuildRequires:  qt5-qtx11extras-devel
 Requires:       thunderbird >= 91
-Requires:       thunderbird < 123
+Requires:       thunderbird < 124
 %else
 BuildRequires:  libqt5-qtx11extras-devel
 Requires:       MozillaThunderbird >= 91
-Requires:       MozillaThunderbird < 123
+Requires:       MozillaThunderbird < 124
 %endif
 
 %description
